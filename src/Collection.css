@@ -1,0 +1,15 @@
+.collection {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.collection__item {
+  flex: 1;
+
+  margin-bottom: 5px;
+
+  width: 100%;
+
+  min-height: 75vw;
+  max-height: 90vh;
+}

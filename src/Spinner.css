@@ -1,0 +1,9 @@
+.spinner {
+  animation: spinner__animation infinite 3s linear;
+  height: 80px;
+}
+
+@keyframes spinner__animation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

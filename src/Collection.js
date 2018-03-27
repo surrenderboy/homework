@@ -1,15 +1,17 @@
 import React from 'react';
 
-import CollectionItem from './CollectionItem';
+import './Collection.css';
 
-function Collection({items}) {
-  return (
-    <div className="collection">
-      {items.map(item =>
-        <CollectionItem key={item.id} {...{item}} />
-      )}
-    </div>
-  );
+function renderChildren(children) {
+  return React.Children.map(children, child => {
+    const className = [child.props.className, 'collection__item'].join(' ').trim();
+
+    return React.cloneElement(child, {className});
+  });
+}
+
+function Collection({children}) {
+  return <div className="collection">{renderChildren(children)}</div>;
 }
 
 export default Collection;
