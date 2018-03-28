@@ -24,7 +24,7 @@ class Gallery extends React.Component {
           { hasPrev() && <div className="gallery__prev">&lt;</div> }
         </div>
         <div className="gallery__close" onClick={handleClose}>X</div>
-        <img src={item.img['XL'].href} alt={item.title} className={'gallery__image'} onClick={handleNext}/>
+        <img src={item.img['L'].href} alt={item.title} className={'gallery__image'} onClick={handleNext}/>
         <div className="gallery__control gallery__control_next" onClick={handleNext}>
           { hasNext() && <div className="gallery__next">&gt;</div> }
         </div>
