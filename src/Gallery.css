@@ -1,8 +1,6 @@
 .gallery {
   position: fixed;
 
-  font-size: 24px;
-
   display: flex;
   flex-flow: column;
 
@@ -12,63 +10,98 @@
   left: 0;
 
   background-color: rgba(0, 0, 0, 0.8);
-
-  color: white;
 }
 
-.gallery__control {
+.gallery__nav {
   display: flex;
+  flex-flow: column;
+  flex: 1;
+  flex-basis: 10vmax;
   align-items: center;
-  justify-content: center;
-  height: 15%;
-
-  opacity: .6;
 }
 
-.gallery__control:hover {
-  opacity: .8;
+.gallery__nav_prev {
+  justify-content: flex-start;
 }
 
-.gallery__close {
+.gallery__nav_next {
+  justify-content: flex-end;
+}
+
+.gallery__nav_close {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  align-items: flex-end;
+  justify-content: flex-start;
 
   top: 0;
   right: 0;
+  z-index: 1;
 
-  width: 20%;
-  height: 15%;
-
-  opacity: .6;
+  width: 15vmax;
+  height: 15vmax;
 }
 
-.gallery__close:hover {
-  opacity: .8;
+.gallery__nav_close .gallery__icon {
+  margin-top: 3vmax;
+  margin-right: 3vmax;
 }
 
-.gallery__control_prev {
-  top: 0;
-}
-
-.gallery__prev {
+.gallery__nav_next .gallery__icon {
+  margin-bottom: 3vh;
   transform: rotate(90deg);
 }
 
-.gallery__control_next {
-  bottom: 0;
+.gallery__nav_prev .gallery__icon {
+  margin-top: 3vh;
+  transform: rotate(90deg);
 }
 
-.gallery__next {
-  transform: rotate(90deg);
+.gallery__icon {
+  font-size: 24px;
+  color: white;
+
+  opacity: 0.6;
+}
+
+.gallery__nav:hover .gallery__icon {
+  opacity: 0.8;
 }
 
 .gallery__image {
   object-fit: contain;
 
-  width: 100%;
-  height: 70%;
+  max-height: 80vh;
+  width: 100vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .gallery {
+    flex-direction: row;
+  }
+
+  .gallery__nav {
+    flex-direction: row;
+  }
+
+  .gallery__nav_close {
+    flex-direction: column;
+  }
+
+  .gallery__nav_next .gallery__icon {
+    margin-right: 3vw;
+    transform: rotate(0);
+  }
+
+  .gallery__nav_prev .gallery__icon {
+    margin-left: 3vw;
+    transform: rotate(0);
+  }
+
+  .gallery__image {
+    max-width: 80vw;
+    max-height: 100vh;
+  }
 }
 
 .gallery_noscroll {
