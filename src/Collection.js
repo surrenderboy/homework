@@ -11,7 +11,7 @@ function renderChildren(children) {
 }
 
 function Collection({children}) {
-  return <div className="collection">{renderChildren(children)}</div>;
+  return <div className="collection collection_nowrap_landscape">{renderChildren(children)}</div>;
 }
 
 export default Collection;

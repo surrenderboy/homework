@@ -12,3 +12,17 @@
 
   max-height: 90vh;
 }
+
+@media only screen and (max-height: 420px) {
+  .collection_nowrap_landscape {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .collection_nowrap_landscape .collection__item {
+    margin: 0 5px 0 0;
+
+    max-width: 90vw;
+    max-height: 100vh;
+  }
+}
