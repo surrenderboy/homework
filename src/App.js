@@ -31,7 +31,7 @@ class App extends Component {
       .then(data =>
         this.setState({
           isLoading: false,
-          items: data.entries
+          items: data.entries.slice(0, 10)
         })
       );
   }
