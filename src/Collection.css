@@ -1,21 +1,20 @@
 .collection {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
 }
 
 .collection__item {
-  flex: 1;
-
   margin: 0 0 5px 0;
 
-  width: 100vw;
+  width: 100%;
 
+  min-height: 45vh;
   max-height: 90vh;
 }
 
 @media only screen and (max-height: 420px) {
   .collection_nowrap_landscape {
-    flex-wrap: nowrap;
+    flex-flow: row;
     overflow-x: scroll;
   }
 
@@ -23,6 +22,7 @@
     margin: 0 5px 0 0;
 
     max-width: 90vw;
-    max-height: 100vh;
+    height: 100vh;
+    max-height: unset;
   }
 }
