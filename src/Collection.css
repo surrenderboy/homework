@@ -6,8 +6,6 @@
 .collection__item {
   margin: 0 0 5px 0;
 
-  width: 100%;
-
   min-height: 45vh;
   max-height: 90vh;
 }
@@ -24,5 +22,25 @@
     max-width: 90vw;
     height: 100vh;
     max-height: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-height: 421px) {
+  .collection {
+    flex-flow: row wrap;
+  }
+
+  .collection__item {
+    flex: 1;
+    min-width: 35vw;
+    min-height: 300px;
+    max-height: 500px;
+    margin: 3px;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (min-height: 421px){
+  .collection__item {
+    min-width: 30vw;
   }
 }
