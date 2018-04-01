@@ -13,7 +13,7 @@
 
 - 2 марта [[Верстка] Галерея картинок](https://github.com/yandex-shri-minsk-2018/homework/blob/master/task-1.md). Собтвенно коллекция картинок, предпросмотр отдельной картинки.
   - дедлайн 31 марта
-- 14 марта [[React] Интеграция верстки с react + redux]((https://github.com/yandex-shri-minsk-2018/homework/blob/master/task-2.md).
+- 14 марта [[React] Интеграция верстки с react + redux](https://github.com/yandex-shri-minsk-2018/homework/blob/master/task-2.md).
   - дедлайн 14 апреля
-- 31 марта [Инфраструктура] Настроить gemini/eslint. Написать тесты на свой код/eslint.
+- 31 марта [[Инфраструктура] Настроить gemini/eslint. Написать тесты на свой код/eslint](https://github.com/yandex-shri-minsk-2018/homework/blob/master/task-3.md).
   - дедлайн 28 апреля
