@@ -2,18 +2,11 @@
   "name": "homework",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/": {
-      "target": "http://api-fotki.yandex.ru",
-      "headers": {
-        "Accept": "application/json"
-      }
-    }
-  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "unsplash-js": "^4.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

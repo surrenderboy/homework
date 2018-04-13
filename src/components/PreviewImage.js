@@ -6,7 +6,7 @@ function PreviewImage({className, image, handleClick}) {
   return (
     <img
       className={`preview-image ${className}`}
-      src={image.img['L'].href}
+      src={image.urls.regular}
       alt={image.title}
       onClick={() => handleClick(image)}
     />

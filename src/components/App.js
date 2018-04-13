@@ -5,6 +5,8 @@ import Collection from './Collection.js';
 import Gallery from "./Gallery";
 import PreviewImage from "./PreviewImage";
 import Spinner from "./Spinner";
+import unsplash from "../unsplash";
+import {toJson} from "unsplash-js";
 
 class App extends Component {
   state = {
@@ -26,12 +28,12 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('/api/podhistory/')
-      .then(response => response.json())
-      .then(data =>
+    unsplash.photos.listPhotos(1, 12)
+      .then(toJson)
+      .then(items =>
         this.setState({
           isLoading: false,
-          items: data.entries.slice(0, 12)
+          items,
         })
       );
   }
