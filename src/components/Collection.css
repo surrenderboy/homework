@@ -1,12 +1,15 @@
 .collection {
   display: flex;
   flex-flow: column;
+
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
 }
 
 .collection__item {
   margin: 0 0 5px 0;
 
-  min-height: 45vh;
   max-height: 90vh;
 }
 
