@@ -1,6 +1,6 @@
 import React from 'react';
 
-import reactLogo from './logo.svg';
+import reactLogo from '../logo.svg';
 import './Spinner.css';
 
 function Spinner({className}) {
