@@ -16,19 +16,19 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const {item, hasNext, hasPrev, handleClose, handlePrev, handleNext} = this.props;
+    const {image, hasPrev, hasNext, handleClose, handlePrev, handleNext} = this.props;
 
     return (
       <div className="gallery">
         <div className="gallery__nav gallery__nav_prev" onClick={handlePrev}>
-          { hasPrev() && <div className="gallery__icon gallery__icon_prev">&lt;</div> }
+          { hasPrev && <div className="gallery__icon gallery__icon_prev">&lt;</div> }
         </div>
         <div className="gallery__nav gallery__nav_close" onClick={handleClose}>
           <div className="gallery__icon gallery__icon_close">X</div>
         </div>
-        <img src={item.urls.regular} alt={item.title} className={'gallery__image'} onClick={handleNext}/>
+        <img src={image.src} alt={image.alt} className={'gallery__image'} onClick={handleNext}/>
         <div className="gallery__nav gallery__nav_next" onClick={handleNext}>
-          { hasNext() && <div className="gallery__icon gallery__icon_next">&gt;</div> }
+          { hasNext && <div className="gallery__icon gallery__icon_next">&gt;</div> }
         </div>
       </div>
     );
