@@ -1,3 +1,9 @@
 .preview-image {
   object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.preview-image__hidden {
+  opacity: 0;
 }
