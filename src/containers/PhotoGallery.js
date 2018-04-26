@@ -1,10 +1,7 @@
-import {connect} from "react-redux";
-import Gallery from "../components/Gallery";
-import {
-  hidePhoto,
-  showNextPhoto,
-  showPrevPhoto
-} from "../actions";
+import { connect } from 'react-redux';
+
+import { hidePhoto, showNextPhoto, showPrevPhoto } from '../actions';
+import Gallery from '../components/Gallery';
 
 const mapStateToProps = ({ photos, selectedPhotoIndex }) => {
   const photoId = photos.allIds[selectedPhotoIndex];

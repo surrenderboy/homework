@@ -1,14 +1,14 @@
-import * as ActionTypes from '../constants/ActionTypes'
-import {combineReducers} from "redux";
+import { combineReducers } from 'redux';
+
+import * as ActionTypes from '../constants/ActionTypes';
 
 const addPhotoEntries = (state, action) => ({
   ...state,
   ...action.photos.reduce(
-    (byId, photo) => {
-      byId[photo.id] = photo;
-
-      return byId;
-    },
+    (byId, photo) => ({
+      ...byId,
+      [photo.id]: photo,
+    }),
     {},
   ),
 });

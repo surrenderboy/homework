@@ -69,10 +69,15 @@
 }
 
 .gallery__image {
-  object-fit: contain;
-
   max-height: 80vh;
   width: 100vw;
+}
+
+.gallery__img {
+  height: 100%;
+  width: 100%;
+
+  object-fit: contain;
 }
 
 @media only screen and (orientation: landscape) {

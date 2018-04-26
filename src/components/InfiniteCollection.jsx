@@ -1,9 +1,21 @@
 import React from 'react';
-import Collection from "./Collection";
+import PropTypes from 'prop-types';
+
+import Collection from './Collection';
 
 const THRESHOLD = 1000;
 
 class InfiniteCollection extends React.Component {
+  static propTypes = {
+    children: PropTypes.arrayOf(PropTypes.node).isRequired,
+    isFetching: PropTypes.bool,
+    fetchNext: PropTypes.func,
+  };
+  static defaultProps = {
+    isFetching: false,
+    fetchNext() {},
+  };
+
   constructor(props) {
     super(props);
 
@@ -24,9 +36,11 @@ class InfiniteCollection extends React.Component {
   onScroll() {
     if (!this.container || this.props.isFetching) return;
 
-    let scrollPosition, containerSize, scrollSize;
+    let scrollPosition;
+    let containerSize;
+    let scrollSize;
 
-    const scrollHeight = this.container.scrollHeight;
+    const { scrollHeight } = this.container;
     const containerHeight = this.container.clientHeight;
 
     if (scrollHeight !== containerHeight) {
@@ -50,7 +64,7 @@ class InfiniteCollection extends React.Component {
     return (
       <div>
         <Collection bindRef={this.setContainer}>
-          {this.props.children}
+          { this.props.children }
         </Collection>
       </div>
     );

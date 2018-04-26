@@ -1,16 +1,16 @@
-import {connect} from "react-redux";
-import PreviewImagesCollection from "../components/PreviewImagesCollection";
-import {fetchPhotos, showPhotoById} from "../actions";
+import { connect } from 'react-redux';
+import PreviewImagesCollection from '../components/PreviewImagesCollection';
+import { fetchPhotos, showPhotoById } from '../actions';
 
 const mapStateToProps = state => ({
-  images: state.photos.allIds.map(id => {
+  images: state.photos.allIds.map((id) => {
     const photo = state.photos.byId[id];
 
     return {
       id: photo.id,
       src: photo.urls.regular,
-      alt: photo.title,
-    }
+      alt: photo.description,
+    };
   }),
   isFetching: state.photos.isFetching,
 });

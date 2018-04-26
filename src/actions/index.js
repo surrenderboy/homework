@@ -1,6 +1,7 @@
+import { toJson } from 'unsplash-js';
+
+import unsplash from '../unsplash';
 import * as ActionTypes from '../constants/ActionTypes';
-import unsplash from "../unsplash";
-import {toJson} from "unsplash-js";
 
 export const fetchPhotos = () => (
   async (dispatch, getState) => {
@@ -16,7 +17,7 @@ export const fetchPhotos = () => (
       dispatch({
         type: ActionTypes.FETCH_PHOTOS_SUCCESS,
         photos,
-      })
+      });
     } catch (e) {
       dispatch({
         type: ActionTypes.FETCH_PHOTOS_FAILURE,
@@ -25,12 +26,17 @@ export const fetchPhotos = () => (
     } finally {
       dispatch({
         type: ActionTypes.FETCH_PHOTOS_END,
-      })
+      });
     }
   }
 );
 
-export const showPhotoById = (photoId) => (
+export const showPhotoByIndex = photoIndex => ({
+  type: ActionTypes.SHOW_PHOTO,
+  photoIndex,
+});
+
+export const showPhotoById = photoId => (
   (dispatch, getState) => {
     const state = getState();
     const photoIndex = state.photos.allIds.indexOf(photoId);
@@ -38,11 +44,6 @@ export const showPhotoById = (photoId) => (
     dispatch(showPhotoByIndex(photoIndex));
   }
 );
-
-export const showPhotoByIndex = (photoIndex) => ({
-  type: ActionTypes.SHOW_PHOTO,
-  photoIndex,
-});
 
 export const hidePhoto = () => ({
   type: ActionTypes.HIDE_PHOTO,
