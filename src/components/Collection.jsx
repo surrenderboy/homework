@@ -9,17 +9,17 @@ const renderChildren = children => (
   ))
 );
 
-const Collection = ({ bindRef, children }) => (
-  <div ref={bindRef} className="collection collection_nowrap_landscape">
+const Collection = ({ children, className }) => (
+  <div className={`collection collection_nowrap_landscape ${className}`}>
     { renderChildren(children) }
   </div>
 );
 Collection.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node).isRequired,
-  bindRef: PropTypes.func,
+  className: PropTypes.string,
 };
 Collection.defaultProps = {
-  bindRef() {},
+  className: '',
 };
 
 export default Collection;

@@ -40,16 +40,16 @@ class Gallery extends React.Component {
 
     return (
       <div className="gallery">
-        <div className="gallery__nav gallery__nav_prev" onClick={handlePrev} >
+        <div className="gallery__nav gallery__nav_prev" onClick={handlePrev}>
           { hasPrev && <div className="gallery__icon gallery__icon_prev">&lt;</div> }
         </div>
-        <div className="gallery__nav gallery__nav_close" onClick={handleClose} >
+        <div className="gallery__nav gallery__nav_close" onClick={handleClose}>
           <div className="gallery__icon gallery__icon_close">X</div>
         </div>
-        <div className="gallery__image" onClick={handleNext} >
+        <div className="gallery__image" onClick={handleNext}>
           <img src={image.src} alt={image.alt} className="gallery__img" />
         </div>
-        <div className="gallery__nav gallery__nav_next" onClick={handleNext} >
+        <div className="gallery__nav gallery__nav_next" onClick={handleNext}>
           { hasNext && <div className="gallery__icon gallery__icon_next">&gt;</div> }
         </div>
       </div>

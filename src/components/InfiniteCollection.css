@@ -1,0 +1,12 @@
+.infinite-collection {
+  height: 100vh;
+  width: 100vw;
+
+  overflow-y: scroll;
+}
+
+@media only screen and (max-height: 420px) {
+  .infinite-collection {
+    overflow-x: scroll;
+  }
+}

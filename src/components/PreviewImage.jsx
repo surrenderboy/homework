@@ -30,7 +30,9 @@ class PreviewImage extends React.Component {
   };
 
   componentDidMount() {
-    if (this.image && this.image.naturalHeight > 0) {
+    const img = this.img.current;
+
+    if (img && img.naturalHeight > 0) {
       // eslint-disable-next-line react/no-did-mount-set-state
       this.setState({
         isHidden: false,

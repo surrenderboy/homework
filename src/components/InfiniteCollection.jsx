@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Collection from './Collection';
 
+import './InfiniteCollection.css';
+
 const THRESHOLD = 1000;
 
 class InfiniteCollection extends React.Component {
@@ -20,50 +22,40 @@ class InfiniteCollection extends React.Component {
     super(props);
 
     this.onScroll = this.onScroll.bind(this);
-    this.setContainer = this.setContainer.bind(this);
   }
 
   componentDidMount() {
-    if (this.props.children.length === 0) this.onScroll();
-
-    this.container.addEventListener('scroll', this.onScroll, { passive: true });
+    if (this.props.children.length === 0) this.props.fetchNext();
   }
 
-  componentWillUnmount() {
-    this.container.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll() {
-    if (!this.container || this.props.isFetching) return;
+  onScroll(event) {
+    const container = event.target;
+    if (!container || this.props.isFetching) return;
 
     let scrollPosition;
     let containerSize;
     let scrollSize;
 
-    const { scrollHeight } = this.container;
-    const containerHeight = this.container.clientHeight;
+    const { scrollHeight } = container;
+    const containerHeight = container.clientHeight;
 
     if (scrollHeight !== containerHeight) {
-      scrollPosition = this.container.scrollTop;
+      scrollPosition = container.scrollTop;
       containerSize = containerHeight;
       scrollSize = scrollHeight;
     } else {
-      scrollPosition = this.container.scrollLeft;
-      containerSize = this.container.clientWidth;
-      scrollSize = this.container.scrollWidth;
+      scrollPosition = container.scrollLeft;
+      containerSize = container.clientWidth;
+      scrollSize = container.scrollWidth;
     }
 
     if (scrollPosition + containerSize >= scrollSize - THRESHOLD) this.props.fetchNext();
   }
 
-  setContainer(container) {
-    this.container = container;
-  }
-
   render() {
     return (
-      <div>
-        <Collection bindRef={this.setContainer}>
+      <div className="infinite-collection" onScroll={this.onScroll}>
+        <Collection>
           { this.props.children }
         </Collection>
       </div>
